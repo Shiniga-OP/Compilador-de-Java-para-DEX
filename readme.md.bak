@@ -1,0 +1,16 @@
+## esse é um compilador duplo, ele utiliza ecj-4.8.jar para compilar o .java para .class no armazenamento externo
+
+## para compilar o .class para .dex, usamos dfoda0.0.9.jar (biblioteca customizada baseada em DX)
+
+## para utilizar você pode:
+
+## compilar o APK via AndroidIDE, AIDE+ ou Sketchware com Sk library tool para transformar os .jar em bibliotecas locais usáveis
+
+## para compilar o java para DEX, você precisa ter os seguintes arquivos nesses diretórios:
+
+## /storage/emulated/0/es/Main.java
+
+## /storage/emulated/0/android.jar
+
+## você pode mudar isso na MainActivity.java do projeto
+## e claro, para o app compilar os arquivos, é necessário dar permissão de acesso ao armazenamento externo
