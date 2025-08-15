@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
 						).compile(ecjArgs);
 
 						if(sucesso){
-							log("SUCESSO! Java compilado para Class\n\n");
+							log("SUCESSO! Java compilado para Class\n");
 							File jarArq = new File(entradaDex, "temp.jar");
 							JarOutputStream jos = new JarOutputStream(new FileOutputStream(jarArq));
 							for(File a : new File(entradaDex).listFiles()){
@@ -88,6 +88,9 @@ public class MainActivity extends Activity {
 							}
 							jos.close();
 						}
+						log("Comando ECJ: ");
+						for(String arg : ecjArgs) log(arg + " ");
+						log("\n\n");
 						File classArq = new File(entradaDex+"Main.class");
 						if(!classArq.exists()) {
 							log("ERRO: Arquivo .class não encontrado!\n");
@@ -104,7 +107,7 @@ public class MainActivity extends Activity {
 						jos.closeEntry();
 						jos.close();
 
-						log("JAR interno criado: " + jarArq.getAbsolutePath() + "\n");
+						log("JAR interno criado: " + jarArq.getAbsolutePath() + "\n\n");
 
 						File dexTemp = new File(getFilesDir(), "classes.dex");
 						String[] args = {"--dex", "--saida=" + dexTemp.getAbsolutePath(), jarArq.getAbsolutePath()};
